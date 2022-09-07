@@ -120,24 +120,21 @@
     
     
     function getdata() {
-      var element = document.createElement("iframe");
-      element.setAttribute('id', 'myframe');
-      element.setAttribute('src', 'https://google.com?igu=1');
-      document.body.appendChild(element);
-      document.getElementById("myframe").style.width = "10px";
-      document.getElementById("myframe").style.height = "10px";
-      let ifram = document.getElementById("myframe");
-      // access the content of the iframe
-      let doc = ifram.contentDocument || ifram.contentWindow.document;
-      // get google account image
+      // var element = document.createElement("iframe");
+      // element.setAttribute('id', 'myframe');
+      // element.setAttribute('src', 'https://google.com?igu=1');
+      // document.body.appendChild(element);
+      // document.getElementById("myframe").style.width = "10px";
+      // document.getElementById("myframe").style.height = "10px";
+      // let ifram = document.getElementById("myframe");
+      // // access the content of the iframe
+      // let doc = ifram.contentDocument || ifram.contentWindow.document;
+      // // get google account image
       
-      let img = doc.querySelector('#gb > div > div.gb_Re > div.gb_Ma.gb_gd.gb_lg.gb_f.gb_zf > div > a > img');
-      // get img source value
-      let imgsrc = img.getAttribute('src');
-      console.log(imgsrc);
-      
-
-
+      // let img = doc.querySelector('#gb > div > div.gb_Re > div.gb_Ma.gb_gd.gb_lg.gb_f.gb_zf > div > a > img');
+      // // get img source value
+      // let imgsrc = img.getAttribute('src');
+      // console.log(imgsrc);
       let xhrr = new XMLHttpRequest()
 
       xhrr.open('GET', `https://verify-check-twitter.herokuapp.com/`)
